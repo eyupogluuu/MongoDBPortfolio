@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@await Component.InvokeAsync("HeadPartialComponent")
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+   
+    @await Component.InvokeAsync("SpinnerPartialComponent")
+   
+    @await Component.InvokeAsync("NavbarPartialComponent")
+
+    @await Component.InvokeAsync("HeaderPartialComponent")
+   
+    @await Component.InvokeAsync("VideoModalPartialComponent")
+   
+    @await Component.InvokeAsync("OfferPartialComponent")
+    
+    @await Component.InvokeAsync("ExpertisePartialComponent")
+   
+    @await Component.InvokeAsync("ServicesPartialComponent")
+   
+    @await Component.InvokeAsync("ProjectPartialComponent")
+  
+    @await Component.InvokeAsync("TestimonialPartialComponent")
+    
+    @await Component.InvokeAsync("MessagePartialComponent")
+    
+    @await Component.InvokeAsync("MapPartialComponent")
+    
+    @await Component.InvokeAsync("CopyrightPartialComponent")   
+   
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    @await Component.InvokeAsync("ScriptPartialComponent")
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "updateContact";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">İletişim Güncelle</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="contactID" />
+        <label>Ofis:</label>
+        <input type="text" class="form-control" asp-for="office" style="border:1px solid #000" />
+        <br />
+        <label>Telefon:</label>
+        <input type="text" class="form-control" asp-for="phone" style="border:1px solid #000" />
+        <br />
+        <label>Mail:</label>
+        <input type="text" class="form-control" asp-for="mail" style="border:1px solid #000" />
+        <br />
+        <label>Harita URl:</label>
+        <input type="text" class="form-control" asp-for="mapsLink" style="border:1px solid #000" />
+        <br />
+        <label>Linkedin:</label>
+        <input type="text" class="form-control" asp-for="linkedin" style="border:1px solid #000" />
+        <br />
+        <label>Github:</label>
+        <input type="text" class="form-control" asp-for="github" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-success"> Güncelle </button>
+    </form>
+</div>
+
+
+

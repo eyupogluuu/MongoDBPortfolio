@@ -1,0 +1,16 @@
+﻿@model List<About>
+
+<div class="d-flex align-items-center mb-5">
+    @foreach (var item in Model)
+    {
+        @* <div class="years flex-shrink-0 text-center me-4">
+
+            <h1 class="display-1 mb-0">15</h1>
+            <h5 class="mb-0">Years</h5>
+        </div> *@
+        <h3 class="lh-base mb-0">@item.tittle</h3>
+        <p class="mb-4">@item.descreption</p>
+
+    }
+   
+</div>

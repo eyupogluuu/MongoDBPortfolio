@@ -1,0 +1,39 @@
+﻿@model List<TMessage>
+@{
+    ViewData["Title"] = "messageInbox";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Gelen Mesajlar</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Gönderen</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Sil</th>
+    
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.messageID</td>
+            <td>@item.name</td>
+            <td>@item.mail</td>
+            <td>@item.subject</td>
+            <td>@item.message</td>
+            <td><a class="btn btn-outline-danger" href="/TMessage/deleteMessage/@item.messageID">Sil</a></td>
+            
+
+        </tr>
+    }
+</table>
+
+
+<br />
+
+

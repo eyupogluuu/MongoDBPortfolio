@@ -1,0 +1,15 @@
+﻿@model List<Experience>
+<div class="row gy-5 gx-4">
+	<div class="col-sm-6">
+		@foreach (var item in Model)
+		{
+			<h5>@item.title</h5>
+			<hr class="text-primary my-2">
+			<p class="text-primary mb-1">@item.time</p>
+			<h6 class="mb-0">@item.company</h6>
+
+		}
+
+	</div>
+
+</div>

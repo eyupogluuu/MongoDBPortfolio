@@ -1,0 +1,91 @@
+﻿@{
+	Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Mongo DB Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="~/sidebar-05/css/style.css">
+</head>
+<body>
+
+	<div class="wrapper d-flex align-items-stretch">
+		<nav id="sidebar">
+			<div class="custom-menu">
+				<button type="button" id="sidebarCollapse" class="btn btn-primary">
+					<i class="fa fa-bars"></i>
+					<span class="sr-only">Toggle Menu</span>
+				</button>
+			</div>
+			<div class="p-4">
+				<h1><a class="logo">MongoDB Portfolio <span>Admin Menu</span></a></h1>
+				<ul class="list-unstyled components mb-5">
+					<li class="active">
+						<a href="/About/aboutList/"><span class="fa fa-user-circle mr-3"></span> Hakkımda</a>
+					</li>
+					<li>
+						<a href="/Education/educationList/"><span class="fa fa-graduation-cap mr-3"></span> Eğitimlerim</a>
+					</li>
+					<li>
+						<a href="/Experience/experienceList/"><span class="fa fa-briefcase mr-3"></span> Deneyimlerim</a>
+					</li>
+					<li>
+						<a href="/Service/servicesList/"><span class="fa fa-cogs mr-3"></span> Hizmetlerim</a>
+					</li>
+					<li>
+						<a href="/MyProject/projectList/"><span class="fa fa-folder-open mr-3"></span> Projelerim</a>
+					</li>
+					<li>
+						<a href="/Skill/skillList/"><span class="fa fa-code mr-3"></span> Yeteneklerim</a>
+					</li>
+					<li>
+						<a href="/Testimonial/testimonialList/"><span class="fa fa-star mr-3"></span> Referanslarım</a>
+					</li>
+					<li>
+						<a href="/Client/clientList/"><span class="fa fa-users mr-3"></span> Müşteriler</a>
+					</li>
+					<li>
+						<a href="/Contact/contactList/"><span class="fa fa-envelope mr-3"></span> İletişim</a>
+					</li>									
+					@* <li>
+						<a href="/Offer/offerLis/"><span class="fa fa-bullhorn mr-3"></span> Kampanyalar</a>
+					</li> *@					
+					<li>
+						<a href="/TMessage/messageInbox/"><span class="fa fa-envelope-open mr-3"></span> Gelen Mesajlar</a>
+					</li>
+				</ul>
+
+
+
+				<div class="footer">
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						@DateTime.Now.ToShortDateString()<script></script> Tüm Hakları Saklıdır |Onur Eyüpoğlu
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+
+			</div>
+		</nav>
+
+		<!-- Page Content  -->
+		<div id="content" class="p-4 p-md-5 pt-5">
+			@RenderBody()
+		</div>
+	</div>
+
+	@* <script src="~/sidebar-05/js/jquery.min.js"></script> *@
+	<script src="~/sidebar-05/js/popper.js"></script>
+	<script src="~/sidebar-05/js/bootstrap.min.js"></script>
+	<script src="~/sidebar-05/js/main.js"></script>
+</body>
+</html>

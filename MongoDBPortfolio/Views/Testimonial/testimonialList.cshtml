@@ -1,0 +1,39 @@
+﻿@model List<Testimonial>
+@{
+    ViewData["Title"] = "testimonialList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Referanslar Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>Ünvan</th>
+        <th>Yorum</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.testimonialID</td>
+            <td>@item.name</td>
+            <td>@item.surname</td>
+            <td>@item.tittle</td>
+            <td>@item.descreption</td>
+            <td>@item.imageUrl</td>
+            <td><a class="btn btn-outline-danger" href="/Testimonial/deleteTestimonial/@item.testimonialID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Testimonial/updateTestimonial/@item.testimonialID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Testimonial/addTestimonial/">Yeni Referans Ekle</a>
+

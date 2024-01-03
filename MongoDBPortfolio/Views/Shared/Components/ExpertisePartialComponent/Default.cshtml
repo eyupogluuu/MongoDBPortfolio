@@ -1,0 +1,30 @@
+﻿<div class="container-xxl py-6 pb-5" id="skill">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="display-5 mb-5">Beceri & Deneyim</h1>
+                <p class="mb-4">yeteneklerim ve bu yeteneklerimi kullanabildiğim deneyimlerim</p>
+                <h3 class="mb-4">Beceriler</h3>
+                @await Component.InvokeAsync("SkillPartialComponent")
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                    <li class="nav-item w-50">
+                        <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Deneyim</button>
+                    </li>
+                    <li class="nav-item w-50">
+                        <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Eğitim</button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        @await Component.InvokeAsync("ExperiencePartialComponent")
+                    </div>
+                    <div id="tab-2" class="tab-pane fade show p-0">
+                        @await Component.InvokeAsync("EducationPartialComponent")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

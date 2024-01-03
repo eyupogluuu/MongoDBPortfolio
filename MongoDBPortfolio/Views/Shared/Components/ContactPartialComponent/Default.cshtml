@@ -1,0 +1,26 @@
+﻿@model List<Contact>
+
+
+<div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+	@foreach (var item in Model)
+	{
+		<p class="mb-2">Ofis</p>
+		<h3 class="fw-bold">@item.office</h3>
+		<hr class="w-100">
+		<p class="mb-2">Telefon</p>
+		<h3 class="fw-bold">@item.phone</h3>
+		<hr class="w-100">
+		<p class="mb-2">Mail</p>
+		<h3 class="fw-bold">@item.mail</h3>
+		<hr class="w-100">
+		<p class="mb-2">Takip Edin:</p>
+		<div class="d-flex pt-2">
+			<a class="btn btn-square btn-primary me-2" href="@item.linkedin"><i class="fab fa-linkedin-in"></i></a>
+			<a class="btn btn-square btn-primary me-2" href="@item.github"><i class="fab fa-github"></i></a>
+		</div>
+	}
+</div>
+
+
+
+

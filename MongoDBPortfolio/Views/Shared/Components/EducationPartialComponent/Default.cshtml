@@ -1,0 +1,13 @@
+﻿@model List<Education>
+<div class="row gy-5 gx-4">
+	<div class="col-md-10">
+		@foreach (var item in Model)
+		{
+			<h5>@item.title</h5>
+			<hr class="text-primary my-2">
+			<p class="text-primary mb-1">@item.time</p>
+		}
+
+	</div>
+
+</div>

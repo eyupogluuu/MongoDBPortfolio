@@ -1,0 +1,33 @@
+﻿@model List<Education>
+@{
+    ViewData["Title"] = "educationList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Eğitim Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Zaman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.educationID</td>
+            <td>@item.title</td>
+            <td>@item.time</td>
+            <td><a class="btn btn-outline-danger" href="/Education/deleteEducation/@item.educationID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Education/updateEducation/@item.educationID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Education/addEducation/">Yeni Eğitim Ekle</a>
+

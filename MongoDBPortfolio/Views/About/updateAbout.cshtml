@@ -1,0 +1,23 @@
+﻿@model MongoDBPortfolio.DAL.Entities.About
+@{
+    ViewData["Title"] = "updateAbout";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">Hakkımda Güncelle</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="aboutID" />
+        <label>Başlık:</label>
+        <input type="text" class="form-control" asp-for="tittle" style="border:1px solid #000" />
+        <br />
+        <label>Açıklama:</label>
+        <input type="text" class="form-control" asp-for="descreption" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-success"> Güncelle </button>
+    </form>
+</div>
+

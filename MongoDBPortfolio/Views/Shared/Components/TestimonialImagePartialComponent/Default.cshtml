@@ -1,0 +1,12 @@
+﻿@model List<Testimonial>
+<div class="col-lg-3 d-none d-lg-block">
+    @foreach (var item in Model)
+    {
+        <div class="testimonial-left h-100">
+            <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="@item.imageUrl" alt="">
+
+        </div>
+
+    }           
+    
+</div>

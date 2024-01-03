@@ -1,0 +1,31 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "addContact";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">İletişim Bilgi Girişi</h2>
+<div class="container">
+    <br />
+    <form method="post">
+        <label>Ofis:</label>
+        <input type="text" class="form-control" name="office" style="border:1px solid #000" />
+        <br />
+        <label>Telefon:</label>
+        <input type="text" class="form-control" name="phone" style="border:1px solid #000" />
+        <br />
+        <label>Mail:</label>
+        <input type="text" class="form-control" name="mail" style="border:1px solid #000" />
+        <br />
+        <label>Harita URL:</label>
+        <input type="text" class="form-control" name="mapsLink" style="border:1px solid #000" />
+        <br />
+        <label>Linkedin:</label>
+        <input type="text" class="form-control" name="linkedin" style="border:1px solid #000" />
+        <br />
+        <label>Github:</label>
+        <input type="text" class="form-control" name="github" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-primary"> Kaydet </button>
+    </form>
+</div>
+

@@ -1,0 +1,33 @@
+﻿@model List<Skill>
+@{
+    ViewData["Title"] = "skillList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Yeteneklerim Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Puan</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.skillID</td>
+            <td>@item.title</td>
+            <td>@item.rating</td>
+            <td><a class="btn btn-outline-danger" href="/Skill/deleteSkill/@item.skillID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Skill/updateSkill/@item.skillID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Skill/addSkill/">Yeni Yetenek Ekle</a>
+

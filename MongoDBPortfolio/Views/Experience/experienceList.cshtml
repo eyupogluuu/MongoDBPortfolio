@@ -1,0 +1,34 @@
+﻿@model List<Experience>
+@{
+    ViewData["Title"] = "experienceList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Deneyimler Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Ünvan</th>
+        <th>Şirket</th>
+        <th>Süre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.experienceID</td>
+            <td>@item.title</td>
+            <td>@item.company</td>
+            <td>@item.time</td>
+            <td><a class="btn btn-outline-danger" href="/Experience/deleteExperience/@item.experienceID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Experience/updateExperience/@item.experienceID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Experience/addExperience/">Yeni Deneyim Ekle</a>

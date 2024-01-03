@@ -1,0 +1,105 @@
+﻿@model List<Services>
+
+@* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ *@
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<div class="container-fluid bg-light my-5 py-6" id="service">
+	<div class="container">
+		<div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="col-lg-6">
+				<h1 class="display-5 mb-0">Hizmetler</h1>
+			</div>
+			<div class="col-lg-6 text-lg-end">
+				<!-- View dosyanızda -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+					Sipariş Ver
+				</button>
+				<br /><br />
+				<!-- Modal -->
+				<div class="modal" id="myModal">
+					<div class="modal-dialog">
+						<div class="modal-content">
+
+							<!-- Modal Başlık -->
+							<div class="modal-header">
+								<h4 class="modal-title" style="text-align:center">Sipariş Verme İşlemi</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<!-- Modal Gövde -->
+							<div class="modal-body">
+								<div class="form-group">
+									<label @* for="exampleDropdown"  *@class="card-header" style="text-align:center">Güncel Hizmetler:</label><br />
+									<select class="form-control" id="exampleDropdown">
+										<option value="option1">C# Uygulama Geliştirme</option>
+										<option value="option2">Ticari Otomasyon</option>
+										<option value="option3">Veritabanı Entegrasyonu</option>
+										<option value="option3">Bakım ve Destek</option>
+									</select>
+									<br />
+									<input type="text" class="form-control" placeholder="isim soyisim" /> <br />
+									<input type="email" class="form-control" placeholder="mail adresi" /><br />
+									<input type="text" class="form-control" placeholder="iletişim numarası" /><br />
+								</div>
+							</div>
+
+							<!-- Modal Alt Bilgi -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Tamamla</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				@* <a class="btn btn-primary py-3 px-5" href="">Sipariş Ver</a> *@
+			</div>
+		</div>
+		<div class="row g-4">
+			@foreach (var item in Model)
+			{
+				<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+						<div class="bg-icon flex-shrink-0 mb-3">
+							<i class="fa fa-crop-alt fa-2x text-dark"></i>
+						</div>
+
+						<div class="ms-sm-4">
+							<h4 class="mb-3">@item.title</h4>
+							<h6 class="mb-3">Ücret: <span class="text-primary">@item.price ₺</span></h6>
+							<span>@item.descreption</span>
+						</div>
+
+
+					</div>
+				</div>
+			}
+			<script>
+				$(document).ready(function () {
+					// Sayfa yüklendiğinde modal otomatik olarak açılsın
+					// $("#myModal").modal("show"); // Bu satırı kullanmak istiyorsanız comment'in önündeki // işaretini kaldırın
+				});
+			</script>
+			
+
+			<script>
+				// Modal kapatıldıktan sonra çalışacak fonksiyon
+				$('#myModal').on('hidden.bs.modal', function () {
+					// SweetAlert ile başarı bildirimi göster
+					Swal.fire({
+						title: 'Siparişiniz Alındı!',
+						text: 'En Kısa Sürede Dönüş Yapılacaktır',
+						icon: 'success',
+						confirmButtonText: 'Tamam'
+					});
+				});
+			</script>
+		</div>
+	</div>
+</div>

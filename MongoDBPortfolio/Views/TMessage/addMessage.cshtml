@@ -1,0 +1,29 @@
+﻿@model TMessage
+@{
+    ViewData["Title"] = "addMessage";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">Eğitim Girişi</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <label>İsim Soyisim</label>
+        <input type="text" class="form-control" name="name" style="border:1px solid #000" />
+        <br />
+        <label>Mail:</label>
+        <input type="text" class="form-control" name="mail" style="border:1px solid #000" />
+        <br />
+        <label>Konu:</label>
+        <input type="text" class="form-control" name="subject" style="border:1px solid #000" />
+        <br />
+        <label>Mesaj:</label>
+        <input type="text" class="form-control" name="message" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-primary"> Kaydet </button>
+    </form>
+</div>
+
+

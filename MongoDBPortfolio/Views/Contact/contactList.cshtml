@@ -1,0 +1,41 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "contactList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">İletişim Bilgi Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Ofis</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Harita</th>
+        <th>Linkedin</th>
+        <th>Github</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.contactID</td>
+            <td>@item.office</td>
+            <td>@item.phone</td>
+            <td>@item.mail</td>
+            <td>@item.mapsLink</td>
+            <td>@item.linkedin</td>
+            <td>@item.github</td>
+            <td><a class="btn btn-outline-danger" href="/Contact/deleteContact/@item.contactID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Contact/updateContact/@item.contactID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Contact/addContact/">Yeni Bilgi Ekle</a>
+

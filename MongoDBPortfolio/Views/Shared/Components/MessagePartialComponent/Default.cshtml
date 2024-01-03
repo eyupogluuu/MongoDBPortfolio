@@ -1,0 +1,80 @@
+﻿@model TMessage
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div class="container-xxl pb-5" id="contact">
+	<div class="container py-5">
+		<div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="col-lg-6">
+				<h1 class="display-5 mb-0">Bana Ulaşın</h1>
+			</div>
+			@* <div class="col-lg-6 text-lg-end">
+				<a class="btn btn-primary py-3 px-5" href="">Merhaba</a>
+			</div> *@
+		</div>
+		<div class="row g-5">
+			@await Component.InvokeAsync("ContactPartialComponent")
+
+			<div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+				<p class="mb-4">
+					Sizlerle işbirliği yapma fırsatını değerlendirmek ve daha fazla detayı
+					konuşmak için sabırsızlanıyorum. Benimle iletişime geçmek için yukarıda
+					belirtilen adresden ve telefon numarasından bana ulaşabilirsiniz. İsterseniz de formu doldurarak başlayabilirsiniz
+				</p>
+				<form method="post" asp-controller="Tmessage" asp-action="addMessage">
+					<div class="row g-3">
+						<div class="col-md-6">
+							<div class="form-floating">
+								<input type="text" class="form-control" name="name" placeholder="ad soyad">
+								<label>Ad Soyad</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-floating">
+								<input type="email" class="form-control" name="mail" placeholder="mail">
+								<label>Mail</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-floating">
+								<input type="text" class="form-control" name="subject" placeholder="kou">
+								<label>Konu</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-floating">
+								<textarea class="form-control" placeholder="mesajı yazın" name="message" style="height: 100px"></textarea>
+								<label>Mesaj</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<button class="btn btn-primary py-3 px-5" type="submit" id="btn1">Gönder</button>
+						</div>
+					</div>
+					<script>
+						$(document).ready(function () {
+							$("#btn1").click(function (e) {
+								e.preventDefault(); // Formun hemen gönderilmesini engelle
+
+								swal({
+									title: "Mesaj İletildi!",
+									text: "En Kısa Sürede Dönüş Sağlanacak",
+									icon: "success",
+									button: "Devam Et",									
+									confirmButtonText: 'Devam et'
+								}).then((result) => {
+									if (result) {
+										// SweetAlert'dan gelen onaydan sonra formu gönder
+										$("form").submit();
+									}
+								});
+							});
+						});
+					</script>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

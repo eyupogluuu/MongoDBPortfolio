@@ -1,0 +1,22 @@
+﻿@model Education
+@{
+    ViewData["Title"] = "addEducation";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">Eğitim Girişi</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <label>Başlık</label>
+        <input type="text" class="form-control" name="title" style="border:1px solid #000" />
+        <br />       
+        <label>Süre:</label>
+        <input type="text" class="form-control" name="time" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-primary"> Kaydet </button>
+    </form>
+</div>
+

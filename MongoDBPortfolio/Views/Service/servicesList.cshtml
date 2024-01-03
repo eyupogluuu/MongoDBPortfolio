@@ -1,0 +1,35 @@
+﻿@model List<Services>
+@{
+    ViewData["Title"] = "servicesList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white">Hizmetler Listesi</h2>
+
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Ücret</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.serviceID</td>
+            <td>@item.title</td>
+            <td>@item.price</td>
+            <td>@item.descreption</td>
+            <td><a class="btn btn-outline-danger" href="/Service/deleteServices/@item.serviceID">Sil</a></td>
+            <td><a class="btn btn-outline-success" href="/Service/updateServices/@item.serviceID">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-outline-primary" href="/Service/addServices/">Yeni Hizmet Ekle</a>
+

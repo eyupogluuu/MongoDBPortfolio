@@ -1,0 +1,25 @@
+﻿@model AboutMe
+@{
+    ViewData["Title"] = "addAboutMe";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">Hakkımda Girişi</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <label>Ünvan:</label>
+        <input type="text" class="form-control" name="tittle" style="border:1px solid #000" />
+        <br />
+        <label>Ad:</label>
+        <input type="text" class="form-control" name="name" style="border:1px solid #000" />
+        <br />
+        <label>Soyad:</label>
+        <input type="text" class="form-control" name="surname" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-primary"> Kaydet </button>
+    </form>
+</div>
+

@@ -1,0 +1,21 @@
+﻿@model Client
+@{
+    ViewData["Title"] = "updateClient";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<br />
+<h2 class="card header" style="text-align:center; background-color:midnightblue; color:white;">Müşteri Güncelle</h2>
+<br />
+<div class="container">
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="clientID" />
+        <label>Müşteri:</label>
+        <input type="text" class="form-control" asp-for="clientName" style="border:1px solid #000" />
+        <br />
+        <label>Hizmet:</label>
+        <input type="text" class="form-control" asp-for="clientService" style="border:1px solid #000" />
+        <br />
+        <button class="btn btn-success"> Güncelle </button>
+    </form>
+</div>
